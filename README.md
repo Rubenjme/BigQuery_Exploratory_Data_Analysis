@@ -190,11 +190,10 @@ Y si nos centramos en las variables categóricas de cada tabla:
 #### 3.4 Valores anómalos
 
    <div align="center">
-     <img src="https://github.com/user-attachments/assets/00d07e94-df03-4d3d-a6d0-dfbec9ad4a2d">
+     <img src="https://github.com/user-attachments/assets/5cc7d61c-5b91-4dbf-9283-180e9dfe2fe8">
    </div>
 
-
-Encontramos 6836 registros en features con temperaturas demasiado bajas/altas.
+Encontramos 2615 registros en features con temperaturas demasiado bajas/altas.
 
    <div align="center">
      <img src="https://github.com/user-attachments/assets/d13abd95-0fac-4c2a-8586-0cb46c97a81a">
@@ -204,7 +203,7 @@ Encontramos 6836 registros en features con temperaturas demasiado bajas/altas.
 Podemos verlo en forma de gráfico si hacemos uns eguimiento a la temperatura según la fecha.
 
    <div align="center">
-     <img src="https://github.com/user-attachments/assets/6c5c8ce7-c086-4e90-ba0b-1cad243dbfae">
+     <img src="https://github.com/user-attachments/assets/63d5bec4-6a98-4af7-ad9f-33d239afe371">
    </div>
 
 

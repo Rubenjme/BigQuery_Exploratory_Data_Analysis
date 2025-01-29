@@ -83,8 +83,10 @@ Se realizarán 2 consultas sencillas a modo de prueba para confirmar que BigQuer
      <img src="https://github.com/user-attachments/assets/32a22a91-a16f-46eb-b1da-feb6e335d385">
   </div>
 
+Por ejemplo para features:
+
   <div align="center">
-     <img src="https://github.com/user-attachments/assets/76c5b7d7-911d-4e1d-85f6-e6f6a0b5eb87">
+     <img src="https://github.com/user-attachments/assets/cfe907f1-5734-4683-b9bd-7e24ace28d92">
   </div>
   
 - La segunda consiste en contar el número de filas de cada tabla.
@@ -111,15 +113,106 @@ Los números coinciden con lo que aparece en los archivos, por lo que todo está
 
 ### 3. Análisis exploratorio
 
+#### 3.1 Rangos de las variables numéricas
+
 A continuación, voy a estudiar el rango (máximo y mínimo) de cada variable numérica.
 
+  <div align="center">
+     <img src="https://github.com/user-attachments/assets/f1dfe9d5-8025-4229-9455-dbbd53017b20">
+  </div>
+
+  <table align="center">
+  <tr>
+    <th>Features</th>  
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/c534464b-a23e-484e-991b-d155baabdeb0"></td>
+   </tr>
+   </table>
+
+  
+  <table align="center">
+  <tr>
+    <th>Stores</th>
+    <th>Sales</th>  
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/65692789-69c7-4bb7-b375-661cfa8527d7"></td>
+    <td><img src="https://github.com/user-attachments/assets/ad75cdc1-e0f6-4db7-8040-2fa9d10c13d4"></td>
+  </tr>
+</table>
+
+#### 3.2 Variables categóricas
+
+Y si nos centramos en las variables categóricas de cada tabla:
+
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/27dc3393-a3a3-4856-963b-e07e80e8460b">
+  </div>
+
+  <table align="center">
+  <tr>
+    <th>Features</th>
+     <th>Stores</th>
+    <th>Sales</th>
+    
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/10463d99-d02c-4b8b-9a75-fb1ff8347201"></td>
+    <td><img src="https://github.com/user-attachments/assets/703e8c26-c2c7-43ff-a380-fea43a053ea0"></td>
+    <td><img src="https://github.com/user-attachments/assets/d9bd89b7-3805-486f-9dd3-a69a513d2143"></td>
+  </tr>
+</table>
 
 
+#### 3.3 Valores nulos
+
+  <table align="center">
+  <tr>
+    <th>Features</th>  
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/b2890727-36f4-4207-a13e-61d491c07617"></td>
+   </tr>
+   </table>
+
+   <table align="center">
+   <tr>
+    <th>Sales</th>
+    <th>Stores</th>
+   <tr>
+    <td><img src="https://github.com/user-attachments/assets/2681d6d3-21b9-4df3-9935-9aaec6701e43"></td>
+    <td><img src="https://github.com/user-attachments/assets/76eaed96-834c-45be-a7cd-6bb124bb7eb9"></td>
+  </tr>
+   </table>
 
 
+#### 3.4 Valores anómalos
+
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/00d07e94-df03-4d3d-a6d0-dfbec9ad4a2d">
+   </div>
 
 
+Encontramos 6836 registros en features con temperaturas demasiado bajas/altas.
 
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/d13abd95-0fac-4c2a-8586-0cb46c97a81a">
+   </div>
+
+
+Podemos verlo en forma de gráfico si hacemos uns eguimiento a la temperatura según la fecha.
+
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/6c5c8ce7-c086-4e90-ba0b-1cad243dbfae">
+   </div>
+
+
+Encontramos 1285 registros en sales con ventas semanales negativas, lo cuál es imposible.
+
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/390d21ae-ca12-4a8e-a99f-822bb60b9e56">
+   </div>
 
 
 

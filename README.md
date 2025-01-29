@@ -214,6 +214,31 @@ Encontramos 1285 registros en sales con ventas semanales negativas, lo cuál es 
    </div>
 
 
+#### 3.5 Ventas por tipo de tienda
 
 
+Tienda de tipo 20 con 301.40M
+
+Tienda de tipo 4 con 299.54M
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/2886c9bf-cba5-4d3c-95b7-0df6040cac27">
+   </div>
+
+
+#### 3.6 Ventas a lo largo del tiempo
+
+
+Se aprecian picos que coinciden con el Black Friday y con las compras navideñas.
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/96e36a2f-7ec8-4b9a-a676-0a3903f407f2">
+   </div>
+
+#### 3.7 Ventas según vacaciones
+
+Toda aquella tienda que se encuentre por encima del 100% significa que ha visto un aumento en sus ventas en temporada vacacional, la gran mayorái tienen este comportamiento, destacando las tiendas 7 y 35 con un aumento de casi el 18%.
+Por otro lado hay tiendas que ven perjudicadas (36, 37, 38 y 44) en las que sus ventas descienden alrededor de un 2%.
+
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/0422a271-1862-4963-a99f-aedc01e860fb">
+   </div>
 

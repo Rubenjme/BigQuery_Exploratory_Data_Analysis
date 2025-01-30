@@ -3,9 +3,19 @@
 
 ## Descripción del proyecto
 
+Una cadena de tiendas tiene los datos históricos de ventas de 45 de sus tiendas, que se encuentran en diferentes regiones y donde cada una dispone de diferentes departamentos. 
+Los datos están repartidos en tres ficheros CSV:
+- stores.csv -> Información anonimizada de 45 tiendas
+- features.csv -> Contiene información adicional sobre la tienda, el departamento y las características de la región donde esta se encuentra para cada fecha. Los campos MarkDown representan promociones.
+- sales.csv -> Información histórica sobre ventas entre 2010-02-05 y 2012-11-01. 
 
 ## Objetivos
-
+- Cargar y gestionar datos en Google BigQuery: Utilizar BigQuery como Data Warehouse para almacenar y consultar datos.
+- Explorar la estructura del dataset: Analizar la cantidad de datos, tipos de variables y relaciones clave.
+- Detectar valores anómalos y faltantes: Identificar registros inconsistentes en las diferentes tablas.
+- Realizar análisis exploratorio con SQL: Examinar distribuciones, calcular agregaciones y detectar patrones en las ventas.
+- Aplicar operaciones JOIN entre tablas: Relacionar datos de ventas con características de las tiendas y factores externos.
+- Extraer insights para la toma de decisiones: Identificar tendencias que puedan ayudar a mejorar el rendimiento de las tiendas.
 
 ## Configuración inicial (Subida de archivos y creación de tablas)
 
@@ -68,7 +78,7 @@ Se va a realizar una serie de consultas para conocer mejor la naturaleza de los 
 
 ### 1. Tratamiento inicial
 
-Tras una primer vistazo sobre los archivos csv, se puede ver que las columnas CPI y Unemployment de la tabla features son tratados como Float, pero sin embargo tienen algunos valores nulos que aparecen como "NA" que son strings, esto generará conflictos, por lo que lo primero que realizo es una sustitución de esos valores "NA" por NULL para que puedan ser correctamente tratados. Esto mismo ocurre en los campos MarkDown, donde aparentemente hay una gran cantidad de nulos.
+Tras una primer vistazo sobre los archivos csv, se puede ver que las columnas CPI y Unemployment de la tabla features son tratados como Float, pero sin embargo tienen algunos valores nulos que aparecen como "NA" que son strings, esto generará conflictos, por lo que lo primero que se realiza es una sustitución de esos valores "NA" por NULL para que puedan ser correctamente tratados. Esto mismo ocurre en los campos MarkDown, donde aparentemente hay una gran cantidad de nulos.
   <div align="center">
      <img src="https://github.com/user-attachments/assets/8c2503d0-eaf7-4d19-ab8b-e3e8c725a794" alt="tratamiento">
   </div>
@@ -88,6 +98,8 @@ Por ejemplo para features:
   <div align="center">
      <img src="https://github.com/user-attachments/assets/cfe907f1-5734-4683-b9bd-7e24ace28d92">
   </div>
+
+Se puede observar como los campos MarkDown ahora si aparecen reflejados como NULL.
   
 - La segunda consiste en contar el número de filas de cada tabla.
 
@@ -142,6 +154,14 @@ A continuación, voy a estudiar el rango (máximo y mínimo) de cada variable nu
   </tr>
 </table>
 
+Estas consultas nos arrojan unos datos interesantes.
+Lo primero que se puede notar es que en la tabla **Sales**, existen registros de ventas semanales, que son erróneos porque son negativos (salvo que sean devoluciones, pero no las trataré como tal en este análisis, ya que no hay información al respecto). Solo se utilizarán aquellas ventas semanales superior o igual a 0, por lo que habría que hacer una limpieza de esos registros.
+
+En la tabla **Features** se puede destacar que la temperatura oscila entre -7.29 y 101.95 lo que lleva a pensar a que los datos estén en grados fahrenheit, apróximadamente entre -22ºC y 39ºC. Dependiendo del contexto geográfico, estos valores podrían ser realistas y dado que no se sabe la ubicación concreta de las tiendas decidí que pueden ser valores reales. La tasa de desempleo oscila entre 3.684% – 14.313%, podría ser interesante realizar un análisis sobre esta métrica para concluir si en tiendas situadas en regiones con tasas de mayor desempleo existe una disminución en las ventas promedio.
+
+En la tabla **Stores** se puede apreciar que el rango de tamaño de las tiendas es amplio entre 34,875 – 219,622, aunque se desconoce a qué medidas se refiere, se interpretarán como metros cuadrados. Al igual que en el caso anterior, podría ser interesante realizar un estudio para determinar si el tamaño de la tienda influye de alguna forma en las ventas promedio.
+
+
 #### 3.2 Variables categóricas
 
 Y si nos centramos en las variables categóricas de cada tabla:
@@ -164,6 +184,15 @@ Y si nos centramos en las variables categóricas de cada tabla:
   </tr>
 </table>
 
+En **Features** se observa que hay 7.605 registros de semanas no festivas y 585 registros semanas festivas lo que equivale a solo el 7.1% de las semanas disponibles. Aún así sería conveniente ver como se comportan las ventas en las semanas festivas.
+
+En **Stores** obtenemos que tenemos 
+- Tipo A: 22 tiendas (48.9% del total).
+- Tipo B: 17 tiendas (37.8%).
+- Tipo C: 6 tiendas (13.3%).
+
+Esto indica que las tiendas tipo C son minoría en los datos, habría que evaluar si también son minoría en ventas.
+
 
 #### 3.3 Valores nulos
 
@@ -185,6 +214,11 @@ Y si nos centramos en las variables categóricas de cada tabla:
     <td><img src="https://github.com/user-attachments/assets/76eaed96-834c-45be-a7cd-6bb124bb7eb9"></td>
   </tr>
    </table>
+
+
+En **Features** tenemos alrededor del 7% de valores nulos para la tasa de desempleo y para el CPI, son variables importantes para entender el contexto de la región, por lo que su ausencia puede limitar el análisis, se podría considerar imputarlos como sus promedios o eliminarlos. Por otro lado, alrededor de algo menos del 50% de los datos de promociones son nulos, por lo que estos registros no son consistentes para sacar conclusiones sobre ellos, podrían llegar a excluirse del modelo si consideramos que las promociones no son relevantes para el análisis.
+
+Tanto para **Sales** como para **Stores** tenemos los datos completos por lo que se podrán realizar análisis más confiables.
 
 
 #### 3.4 Valores anómalos

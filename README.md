@@ -297,5 +297,5 @@ Podemos ver como más de la mitad de las ventas se realiza en los festivos, a pe
 
 
 ## Futuras mejoras
-- Analisis más profundo con más métricas y consultas.
+- Analisis con más métricas y consultas.
 - Visualizar resultados con Looker Studio

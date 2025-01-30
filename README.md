@@ -229,7 +229,7 @@ Tanto para **Sales** como para **Stores** tenemos los datos completos por lo que
 
 Dado que no se conoce la ubicación de las tiendas, se tomó como criterio descartar aquellos valores de temperatura que se encuentren por debajo de -10º y por encima de los 35º. Bajo esta premisa se encontraron. Encontramos 92 registros outliers. Puede ser interesante ver si las épocas de mayores/menores temperaturas afectan a sus ventas en esos periodos.
 
-La representación gráfica de estos registros es la siguiente:
+Un ejemplo gráfico de estos registros es el siguiente:
 
    <div align="center">
      <img src="https://github.com/user-attachments/assets/959c9cbd-b4f8-42ae-a351-ae4b404f939e">
@@ -251,8 +251,11 @@ Se busca agrupar las ventas totales y promedio por tienda y tipo de tienda, excl
      <img src="https://github.com/user-attachments/assets/6acf49e1-f926-4049-b2c2-2e0982712f1a">
    </div>
 
-Las tiendas de tipo A son las que tienen un mayor desempeño en ventas con un promedio de 29.620, algo esperable ya que también erán 48.9% de las tiendas disponibles.
+
+Las tiendas de tipo A son las que tienen un mayor desempeño en ventas con un promedio de 29.620, algo esperable ya que también erán el 48.9% de las tiendas disponibles.
+
 Las tiendas de tipo B tienen un menor desempeño con un promedio de 26.460, que no está mal para ser el 37.80% de las tiendas.
+
 Las tiendas de tipo C son las que tienen peor desempeño en con un promedio de 13.460, pero no son datos tan negativos ya que constan con solo el 13.3% de las tiendas.
 
 
@@ -260,25 +263,39 @@ Las tiendas de tipo C son las que tienen peor desempeño en con un promedio de 1
 #### 3.6 Ventas a lo largo del tiempo
 
 
-Se aprecian picos que coinciden con el Black Friday y con las compras navideñas.
    <div align="center">
      <img src="https://github.com/user-attachments/assets/96e36a2f-7ec8-4b9a-a676-0a3903f407f2">
    </div>
 
+Aunque era previsible, se confirma que las semanas que coinciden con el Black Friday y con las compras navideñas son las que tienen un mayor volumen de ventas. Posteriormente, el mes de enero suele ser el que tiene menor volumen de ventas durante el año.
+
 #### 3.7 Ventas según vacaciones
 
-Toda aquella tienda que se encuentre por encima del 100% significa que ha visto un aumento en sus ventas en temporada vacacional, la gran mayorái tienen este comportamiento, destacando las tiendas 7 y 35 con un aumento de casi el 18%.
-Por otro lado hay tiendas que ven perjudicadas (36, 37, 38 y 44) en las que sus ventas descienden alrededor de un 2%.
+Toda aquella tienda que se encuentre por encima del 100% significa que ha visto un aumento en sus ventas en temporada vacacional, la gran mayoría tienen este comportamiento, destacando las tiendas 7 y 35, ambas tipo B, con un aumento de casi el 18%.
+Por otro lado hay tiendas que ven perjudicadas sus ventas, descendiendo alrededor de un 2% como la 36 (tipo A) y la 37, 38 y 44, las tres de tipo C.
 
    <div align="center">
      <img src="https://github.com/user-attachments/assets/0422a271-1862-4963-a99f-aedc01e860fb">
    </div>
 
+   <div align="center">
+     <img src="https://github.com/user-attachments/assets/f36803a6-f04a-4ad6-908c-1a8a90d9ea3f">
+   </div>
 
+*Ventas en festivos representadas en azul*
+
+Podemos ver como más de la mitad de las ventas se realiza en los festivos, a pesar de ser solo el 7%. El top 3 de tiendas con mayores ventas (sumando periodos vacacionales) está formado por las tiendas 20, 4 y 14, todas ellas del tipo A, por lo que conviene centrarse en ellas y expandirlas aún más.
 
 ### Conclusiones
 ---
 
+- Oportunidad en festivos: Aunque solo el 7% de las semanas son festivas, su impacto en ventas es desproporcionadamente alto. Recomendaría aumentar stock y personal en semanas clave (Black Friday y Navidad).
+- Enfoque en tiendas grandes: Las Tipo A son el motor principal de ventas. Priorizar su gestión y expansión.
+- Las tiendas Tipo C son minoría. Recomendaría optimizar recursos en tiendas tipo A y B, y reevaluar la rentabilidad de tipo C o cerrarlas
+- Las zonas con alto desempleo tienen un menor porcentaje de ventas, por lo que reducir precios en estas áreas podría impulsar las ventas.
 
 
 
+## Futuras mejoras
+- Analisis más profundo con más métricas y consultas.
+- Visualizar resultados con Looker Studio

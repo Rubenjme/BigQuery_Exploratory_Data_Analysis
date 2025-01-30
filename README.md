@@ -224,24 +224,19 @@ Tanto para **Sales** como para **Stores** tenemos los datos completos por lo que
 #### 3.4 Valores anómalos
 
    <div align="center">
-     <img src="https://github.com/user-attachments/assets/5cc7d61c-5b91-4dbf-9283-180e9dfe2fe8">
+     <img src="https://github.com/user-attachments/assets/28d22127-1265-4da5-88cf-6fe83b369cf2">
    </div>
 
-Encontramos 2615 registros en features con temperaturas demasiado bajas/altas.
+Dado que no se conoce la ubicación de las tiendas, se tomó como criterio descartar aquellos valores de temperatura que se encuentren por debajo de -10º y por encima de los 35º. Bajo esta premisa se encontraron. Encontramos 92 registros outliers. Puede ser interesante ver si las épocas de mayores/menores temperaturas afectan a sus ventas en esos periodos.
+
+La representación gráfica de estos registros es la siguiente:
 
    <div align="center">
-     <img src="https://github.com/user-attachments/assets/d13abd95-0fac-4c2a-8586-0cb46c97a81a">
+     <img src="https://github.com/user-attachments/assets/959c9cbd-b4f8-42ae-a351-ae4b404f939e">
    </div>
 
 
-Podemos verlo en forma de gráfico si hacemos uns eguimiento a la temperatura según la fecha.
-
-   <div align="center">
-     <img src="https://github.com/user-attachments/assets/63d5bec4-6a98-4af7-ad9f-33d239afe371">
-   </div>
-
-
-Encontramos 1285 registros en sales con ventas semanales negativas, lo cuál es imposible.
+Por otro lado, se encontraron 1285 registros en las tabla **Sales** con ventas semanales negativas, lo cuál es imposible, como se dijo anteriomente. Estos registros deberían ser eliminados del modelo.
 
    <div align="center">
      <img src="https://github.com/user-attachments/assets/390d21ae-ca12-4a8e-a99f-822bb60b9e56">
@@ -250,13 +245,16 @@ Encontramos 1285 registros en sales con ventas semanales negativas, lo cuál es 
 
 #### 3.5 Ventas por tipo de tienda
 
+Se busca agrupar las ventas totales y promedio por tienda y tipo de tienda, excluyendo valores negativos.
 
-Tienda de tipo 20 con 301.40M
-
-Tienda de tipo 4 con 299.54M
    <div align="center">
-     <img src="https://github.com/user-attachments/assets/2886c9bf-cba5-4d3c-95b7-0df6040cac27">
+     <img src="https://github.com/user-attachments/assets/6acf49e1-f926-4049-b2c2-2e0982712f1a">
    </div>
+
+Las tiendas de tipo A son las que tienen un mayor desempeño en ventas con un promedio de 29.620, algo esperable ya que también erán 48.9% de las tiendas disponibles.
+Las tiendas de tipo B tienen un menor desempeño con un promedio de 26.460, que no está mal para ser el 37.80% de las tiendas.
+Las tiendas de tipo C son las que tienen peor desempeño en con un promedio de 13.460, pero no son datos tan negativos ya que constan con solo el 13.3% de las tiendas.
+
 
 
 #### 3.6 Ventas a lo largo del tiempo
@@ -275,4 +273,12 @@ Por otro lado hay tiendas que ven perjudicadas (36, 37, 38 y 44) en las que sus 
    <div align="center">
      <img src="https://github.com/user-attachments/assets/0422a271-1862-4963-a99f-aedc01e860fb">
    </div>
+
+
+
+### Conclusiones
+---
+
+
+
 

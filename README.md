@@ -3,11 +3,24 @@
 
 ## Descripción del proyecto
 
+Este proyecto presenta un análisis exploratorio de datos (EDA) utilizando Google BigQuery para examinar el rendimiento de una cadena minorista con 45 tiendas. El proyecto demuestra la aplicación práctica de un Data Warehouse en la nube para analizar datos de ventas históricos y obtener insights de negocio.
+
+Las principales tecnologías y herramientas utilizadas incluyen:
+- Google Cloud Storage (GCS) para el almacenamiento de datos en la nube
+- Google BigQuery como servicio de Data Warehouse
+- SQL para el análisis y manipulación de datos
+
 Una cadena de tiendas tiene los datos históricos de ventas de 45 de sus tiendas, que se encuentran en diferentes regiones y donde cada una dispone de diferentes departamentos. 
 Los datos están repartidos en tres ficheros CSV:
 - stores.csv -> Información anonimizada de 45 tiendas
 - features.csv -> Contiene información adicional sobre la tienda, el departamento y las características de la región donde esta se encuentra para cada fecha. Los campos MarkDown representan promociones.
 - sales.csv -> Información histórica sobre ventas entre 2010-02-05 y 2012-11-01. 
+
+El análisis incluyó varios aspectos:
+- Configuración de la infraestructura en la nube
+- Creación y gestión de tablas (tanto nativas como externas) en BigQuery
+- Limpieza y validación de datos
+- Análisis exploratorio
 
 ## Objetivos
 - Cargar y gestionar datos en Google BigQuery: Utilizar BigQuery como Data Warehouse para almacenar y consultar datos.

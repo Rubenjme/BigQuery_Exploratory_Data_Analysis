@@ -297,7 +297,7 @@ Por otro lado hay tiendas que ven perjudicadas sus ventas, descendiendo alrededo
 
 *Ventas en festivos representadas en azul*
 
-Podemos ver como más de la mitad de las ventas se realiza en los festivos, a pesar de ser solo el 7%. El top 3 de tiendas con mayores ventas (sumando periodos vacacionales) está formado por las tiendas 20, 4 y 14, todas ellas del tipo A, por lo que conviene centrarse en ellas y expandirlas aún más.
+Podemos ver como más de la mitad de las ventas se realiza en los festivos, a pesar de ser solo el 7% de las fechas. El top 3 de tiendas con mayores ventas (sumando periodos vacacionales) está formado por las tiendas 20, 4 y 14, todas ellas del tipo A, por lo que conviene centrarse en ellas y expandirlas aún más.
 
 ### Conclusiones
 ---

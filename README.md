@@ -9,6 +9,7 @@ Las principales tecnologías y herramientas utilizadas incluyen:
 - Google Cloud Storage (GCS) para el almacenamiento de datos en la nube
 - Google BigQuery como servicio de Data Warehouse
 - SQL para el análisis y manipulación de datos
+- Looker Studio para la visualización de los datos.
 
 Una cadena de tiendas tiene los datos históricos de ventas de 45 de sus tiendas, que se encuentran en diferentes regiones y donde cada una dispone de diferentes departamentos. 
 Los datos están repartidos en tres ficheros CSV:
@@ -297,7 +298,11 @@ Por otro lado hay tiendas que ven perjudicadas sus ventas, descendiendo alrededo
 
 *Ventas en festivos representadas en azul*
 
-Podemos ver como más de la mitad de las ventas se realiza en los festivos, a pesar de ser solo el 7%. El top 3 de tiendas con mayores ventas (sumando periodos vacacionales) está formado por las tiendas 20, 4 y 14, todas ellas del tipo A, por lo que conviene centrarse en ellas y expandirlas aún más.
+Podemos ver como más de la mitad de las ventas se realiza en los festivos, a pesar de ser solo el 7% de las fechas. El top 3 de tiendas con mayores ventas (sumando periodos vacacionales) está formado por las tiendas 20, 4 y 14, todas ellas del tipo A, por lo que conviene centrarse en ellas y expandirlas aún más.
+
+
+Finalmente se hizo uso de Looker Studio para una mejor visualización de los datos.
+
 
 ### Conclusiones
 ---
@@ -311,4 +316,3 @@ Podemos ver como más de la mitad de las ventas se realiza en los festivos, a pe
 
 ## Futuras mejoras
 - Analisis con más métricas y consultas.
-- Visualizar resultados con Looker Studio
